@@ -274,6 +274,12 @@ func NewAgentCommand(action func(ctx *cli.Context) error) cli.Command {
 				Usage:       "(experimental) Run rootless",
 				Destination: &AgentConfig.Rootless,
 			},
+			LBServerPortFlag,
+			cli.BoolFlag{
+				Name:        "disable-load-balancer",
+				Usage:       "(agent/node) Disable local load balancer to apiserver",
+				Destination: &AgentConfig.DisableLoadBalancer,
+			},
 
 			// Deprecated/hidden below
 
